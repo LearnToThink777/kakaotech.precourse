@@ -20,7 +20,7 @@ DATABASE_URL = "sqlite:///./blog.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 
 # 실제 DB 조작을 수행할 세션 객체를 생성하는 SessionLocal 클래스를 정의합니다.
-SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+SessionLocal = sessionmaker(bind=engine, autoflush=False)
 
 # 데이터베이스 테이블 선언 시 규칙 공유를 위한 기준 클래스입니다. (SQLAlchemy 2.0+ 표준)
 class Base(DeclarativeBase):
